@@ -1,54 +1,60 @@
 # VYZLAB-Multi-Server-Virtual-Infrastructure
-A comprehensive enterprise-grade virtual network featuring redundant Active Directory services, segregated DMZ web hosting, and a robust file-sharing architecture with disaster recovery capabilities.
+A comprehensive, enterprise-grade virtual network featuring **redundant Active Directory services**, a **segregated DMZ web hosting environment**, and a **robust file-sharing architecture** with disaster recovery capabilities.
+
+---
 
 ## 🚀 Infrastructure Overview
 
-This project simulates a production-ready corporate network managed by a **pfSense firewall**. It emphasizes the **"Always-On"** philosophy by utilizing dual Domain Controllers and automated backup strategies.
+This project simulates a production-ready corporate network managed by a **pfSense firewall**, following the **"Always-On"** philosophy. It leverages dual Domain Controllers for high availability and automated backup strategies to ensure data resilience.
 
 ### Core Technical Pillars
 
 - **High Availability (HA)**  
-  Dual Domain Controllers (`DC-01`, `DC-02`) with cross-replicated Active Directory and split-scope/redundant DHCP.
+  Dual Domain Controllers (`VYZLAB-DC-01`, `VYZLAB-DC-02`) with cross-replicated Active Directory and split-scope/redundant DHCP for uninterrupted authentication and IP services.
 
 - **Network Security**  
-  Three-interface firewall setup (`WAN`, `LAN`, `DMZ`) to isolate public-facing web services from internal corporate data.
+  Three-interface firewall (`WAN`, `LAN`, `DMZ`) isolates public-facing web services from internal corporate resources.
 
 - **Storage & Recovery**  
-  Centralized File Server (`FS`) utilizing Shadow Copies for versioning and Windows Server Backup for disaster recovery.
+  Centralized File Server (`VYZLAB-FS-01`) uses **Shadow Copies** for versioning and **Windows Server Backup** for disaster recovery.
 
 - **Service Segregation**  
-  Dedicated Web Server (`WS`) placed within a DMZ to mitigate risk to the internal domain.
+  Dedicated Web Server (`VYZLAB-WS-01`) resides in the DMZ to protect the internal domain from external threats.
+
+---
 
 ## 🛠 Features & Implementation Details
 
 ### Identity & Network Services
 
-- **Redundant AD DS**  
-  Configured a secondary Domain Controller to ensure authentication remains available if `DC-01` fails.
+- **Redundant Active Directory (AD DS)**  
+  Ensures authentication remains available even if `VYZLAB-DC-01` goes offline.
 
 - **DHCP Failover**  
-  Established DHCP on both controllers to prevent a single point of failure for client IP addressing.
+  Both Domain Controllers provide DHCP, eliminating a single point of failure for IP addressing.
 
 ### Data Protection Strategy
 
 - **Shadow Copies**  
-  Enabled on the File Server to allow users to restore previous versions of files without IT intervention.
+  Users can restore previous file versions independently without IT intervention.
 
 - **Windows Server Backup**  
-  Configured scheduled backups to a dedicated virtual disk to simulate offsite/secondary storage recovery.
+  Scheduled backups to a dedicated virtual disk simulate offsite or secondary storage recovery.
 
 ### DMZ Configuration
 
 - **Security Hardening**  
-  The Web Server (`WS-01`) is isolated in the DMZ.
+  The Web Server (`VYZLAB-WS-01`) is isolated in the DMZ to minimize exposure.
 
 - **Firewall Rules**  
-  Implemented strict pfSense rules allowing only HTTP/HTTPS traffic from the WAN, while blocking the DMZ from initiating connections into the LAN.
+  pfSense rules allow **only HTTP/HTTPS** from the WAN and block the DMZ from initiating connections into the LAN.
+
+---
 
 ## 📝 Future Improvements
 
 - **Site-to-Site Extension**  
-  Migrating a portion of this infrastructure to a second physical host via P2P Ethernet.
+  Expand part of the infrastructure to a second physical host via P2P Ethernet.
 
 - **Linux Integration**  
-  Joining Ubuntu-based servers to the existing Windows Domain using SSSD.
+  Join Ubuntu-based servers to the Windows Domain using SSSD for cross-platform compatibility.
