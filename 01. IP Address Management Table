@@ -4,6 +4,7 @@ NAME            TYPE    ROLE                IP ADDRESS      MASK            NOTE
 pfSense VM      Server  Firewall            192.168.1.x     255.255.255.0   DHCP
                                             10.1.1.1        255.255.255.0   Static
                                             10.2.2.1        255.255.255.0   Static(DMZ)
+----------------------------------------------------------------------------------------
 VYZLAB-DC-01    Server  DC DHCP             10.1.1.10       255.255.255.0   Static
 VYZLAB-DC-02    Server  Secondary DC/DHCP   10.1.1.11       255.255.255.0   Static
 VYZLAB-FS-01    Server  File Server         10.1.1.12       255.255.255.0   Static
