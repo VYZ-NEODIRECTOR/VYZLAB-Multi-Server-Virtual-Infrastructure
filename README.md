@@ -2,7 +2,26 @@
 A comprehensive, enterprise-grade virtual network featuring **redundant Active Directory services**, a **segregated DMZ web hosting environment**, and a **robust file-sharing architecture** with disaster recovery capabilities.
 
 ---
+## 📚 Documentation Structure
 
+Detailed architecture and implementation documentation is organized into the following sections:
+
+- **[01 – Network Architecture & Security](01_Networking_Security.md)**  
+  pfSense firewall topology, LAN/DMZ segmentation, and traffic isolation strategy.
+
+- **[02 – Active Directory & Identity Management](02_Active_Directory.md)**  
+  Domain design, OU structure, administrative delegation, and directory resilience.
+
+- **[03 – Network Services (DHCP & DNS)](03_Network_Services.md)**  
+  Redundant DHCP configuration, DNS architecture, and client failover behavior.
+
+- **[04 – Infrastructure Services](04_Infrastructure_Services.md)**  
+  File server storage strategy, backup configuration, and DMZ web hosting.
+
+- **[05 – Failover & Validation](05_Failover_Validation.md)**  
+  Outage simulation, recovery testing, and high-availability verification.
+
+---
 ## 🚀 Infrastructure Overview
 
 This project simulates a production-ready corporate network managed by a **pfSense firewall VM**, following the **"Always-On"** philosophy. It leverages dual Domain Controllers for high availability and automated backup strategies to ensure data resilience.
