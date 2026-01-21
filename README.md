@@ -88,19 +88,19 @@ This project simulates a production-ready corporate network managed by a **pfSen
 NAME            TYPE    ROLE                IP ADDRESS      MASK            NOTES
 pfSense VM      Server  Firewall            192.168.1.x     255.255.255.0   DHCP
                                             10.1.1.1        255.255.255.0   Static
-                                            10.2.2.1        255.255.255.0   Static(DMZ)
+                                            10.2.2.1        255.255.255.0   Static (DMZ)
 VYZLAB-DC-01    Server  DC DHCP             10.1.1.10       255.255.255.0   Static
 VYZLAB-DC-02    Server  Secondary DC/DHCP   10.1.1.11       255.255.255.0   Static
 VYZLAB-FS-01    Server  File Server         10.1.1.12       255.255.255.0   Static
-VYZLAB-WS-01    Server  Web Server DMZ      10.2.2.10       255.255.255.0   Static(DMZ)
+VYZLAB-WS-01    Server  Web Server DMZ      10.2.2.10       255.255.255.0   Static (DMZ)
 VYZLAB-CLT-01   Client  Workstation         10.1.1.100      255.255.255.0   DHCP
 ```
 ### VM Specification
 ```text
 VM NAME          OS                   vCPU    RAM     STORAGE      ADAPTER
-VYZLAB-DC-01     Windows Server 2025  1       2 GB    30 GB        LAN 1
-VYZLAB-DC-02     Windows Server 2025  1       2 GB    30 GB        LAN 1
-VYZLAB-FS-01     Windows Server 2025  1       2 GB    60 GB,       LAN 1
+VYZLAB-DC-01     Windows Server 2025  1       2 GB    30 GB        LAN
+VYZLAB-DC-02     Windows Server 2025  1       2 GB    30 GB        LAN
+VYZLAB-FS-01     Windows Server 2025  1       2 GB    60 GB,       LAN
                                                       40 GB
 VYZLAB-WS-01     Windows Server 2025  1       2 GB    30 GB        DMZ
-VYZLAB-CLT-01    Windows 11 PRO       1       4 GB    60 GB        LAN 1
+VYZLAB-CLT-01    Windows 11 PRO       1       4 GB    60 GB        LAN
